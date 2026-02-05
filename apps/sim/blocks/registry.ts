@@ -1,3 +1,4 @@
+import { AcpBlock } from '@/blocks/blocks/acp'
 import { AgentBlock } from '@/blocks/blocks/agent'
 import { AhrefsBlock } from '@/blocks/blocks/ahrefs'
 import { AirtableBlock } from '@/blocks/blocks/airtable'
@@ -147,6 +148,7 @@ import { SQSBlock } from './blocks/sqs'
 
 // Registry of all available blocks, alphabetically sorted
 export const registry: Record<string, BlockConfig> = {
+  acp: AcpBlock,
   agent: AgentBlock,
   ahrefs: AhrefsBlock,
   airtable: AirtableBlock,

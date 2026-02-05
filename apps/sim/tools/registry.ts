@@ -1,4 +1,10 @@
 import {
+  connectAgentTool,
+  disconnectTool,
+  getStatusTool,
+  sendMessageTool,
+} from '@/tools/acp'
+import {
   ahrefsBacklinksStatsTool,
   ahrefsBacklinksTool,
   ahrefsBrokenBacklinksTool,
@@ -1414,6 +1420,10 @@ import { sqsSendTool } from './sqs'
 
 // Registry of all available tools
 export const tools: Record<string, ToolConfig> = {
+  acp_connect: connectAgentTool,
+  acp_send_message: sendMessageTool,
+  acp_get_status: getStatusTool,
+  acp_disconnect: disconnectTool,
   arxiv_search: arxivSearchTool,
   arxiv_get_paper: arxivGetPaperTool,
   arxiv_get_author_papers: arxivGetAuthorPapersTool,
