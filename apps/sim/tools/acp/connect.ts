@@ -42,7 +42,7 @@ export const connectAgentTool: ToolConfig<ConnectAgentParams, ConnectAgentRespon
       Authorization: `Bearer ${params.apiKey}`,
     }),
     body: (params) => {
-      const body: Record<string, any> = {}
+      const body: Record<string, string> = {}
 
       if (params.agentId) {
         body.agentId = params.agentId

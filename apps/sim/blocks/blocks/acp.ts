@@ -3,6 +3,8 @@ import type { BlockConfig } from '@/blocks/types'
 import { AuthMode } from '@/blocks/types'
 import type { AcpResponse } from '@/tools/acp/types'
 
+const SESSION_OPERATIONS = ['acp_send_message', 'acp_get_status', 'acp_disconnect'] as const
+
 export const AcpBlock: BlockConfig<AcpResponse> = {
   type: 'acp',
   name: 'Agent Client Protocol',
@@ -55,11 +57,11 @@ export const AcpBlock: BlockConfig<AcpResponse> = {
       placeholder: 'Session ID from connection',
       condition: {
         field: 'operation',
-        value: ['acp_send_message', 'acp_get_status', 'acp_disconnect'],
+        value: SESSION_OPERATIONS,
       },
       required: {
         field: 'operation',
-        value: ['acp_send_message', 'acp_get_status', 'acp_disconnect'],
+        value: SESSION_OPERATIONS,
       },
     },
     {
